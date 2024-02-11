@@ -11,6 +11,8 @@ long keycode = 0;
 int timervalue;
 int bitposition = 0;
 int var = 0;
+int IdealTempMax = 30 // change here
+int IdealTempMin = 16 // change here
 int num, num2, temperature, count;
 float c1 = 0.001125308852122;  
 float c2 =  0.000234711863267;   
@@ -94,35 +96,35 @@ void compare()
   if (keycode == volumeinc)   
   {
     ACtemperature ++;   
-    if (ACtemperature >= 16 && ACtemperature <= 30) 
+    if (ACtemperature >= IdealTempMin && ACtemperature <= IdealTempMax) 
     {
       temperature++; 
       LCDdisplay(); 
     }
-    if (ACtemperature < 16) 
+    if (ACtemperature < IdealTempMin) 
     {
-      ACtemperature = 16;
+      ACtemperature = IdealTempMin;
     }
-    if (ACtemperature > 30) 
+    if (ACtemperature > IdealTempMax) 
     {
-      ACtemperature = 30; 
+      ACtemperature = IdealTempMax; 
     }
   }
   if (keycode == (volumedec)) 
   {
     ACtemperature --; 
-    if (ACtemperature >= 16 && ACtemperature <= 30) 
+    if (ACtemperature >= IdealTempMin && ACtemperature <= IdealTempMax) 
     {
       temperature--;  
       LCDdisplay(); 
     }
-    if (ACtemperature < 16) 
+    if (ACtemperature < IdealTempMin) 
     {
-      ACtemperature = 16; 
+      ACtemperature = IdealTempMin; 
     }
-    if (ACtemperature > 30) 
+    if (ACtemperature > IdealTempMax) 
     {
-      ACtemperature = 30; 
+      ACtemperature = IdealTempMax; 
     }
   }
 }
