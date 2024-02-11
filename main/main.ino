@@ -11,8 +11,6 @@ long keycode = 0;
 int timervalue;
 int bitposition = 0;
 int var = 0;
-int IdealTempMax = 30 // change here
-int IdealTempMin = 16 // change here
 int num, num2, temperature, count;
 float c1 = 0.001125308852122;  
 float c2 =  0.000234711863267;   
@@ -25,7 +23,7 @@ int main (void)
   lcd.init();   
   lcd.cmd(0x0C); 
   lcd.cmd(0x01);  
-  lcd.string("Press Power key");       
+  lcd.string("Press Power key");
   lcd.line2(0);   
   lcd.string("to turn on AC");    
   temperature = 25;   
@@ -96,35 +94,35 @@ void compare()
   if (keycode == volumeinc)   
   {
     ACtemperature ++;   
-    if (ACtemperature >= IdealTempMin && ACtemperature <= IdealTempMax) 
+    if (ACtemperature >= 16 && ACtemperature <= 30) 
     {
       temperature++; 
       LCDdisplay(); 
     }
-    if (ACtemperature < IdealTempMin) 
+    if (ACtemperature < 16) 
     {
-      ACtemperature = IdealTempMin;
+      ACtemperature = 16;
     }
-    if (ACtemperature > IdealTempMax) 
+    if (ACtemperature > 30) 
     {
-      ACtemperature = IdealTempMax; 
+      ACtemperature = 30; 
     }
   }
   if (keycode == (volumedec)) 
   {
     ACtemperature --; 
-    if (ACtemperature >= IdealTempMin && ACtemperature <= IdealTempMax) 
+    if (ACtemperature >= 16 && ACtemperature <= 30) 
     {
       temperature--;  
       LCDdisplay(); 
     }
-    if (ACtemperature < IdealTempMin) 
+    if (ACtemperature < 16) 
     {
-      ACtemperature = IdealTempMin; 
+      ACtemperature = 16; 
     }
-    if (ACtemperature > IdealTempMax) 
+    if (ACtemperature > 30) 
     {
-      ACtemperature = IdealTempMax; 
+      ACtemperature = 30; 
     }
   }
 }
