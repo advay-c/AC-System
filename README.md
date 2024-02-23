@@ -1,9 +1,8 @@
 # Air Conditioning System ATMEGA 324PA
 
-
 ## Functions
 
-** compare **
+**compare**
 
 ```c++
 void compare()
@@ -49,7 +48,7 @@ void compare()
 }
 ```
 
-** LCDdisplay **
+**LCDdisplay**
 
 ```c++
 void LCDdisplay()
