@@ -3,7 +3,7 @@
 
 ## Functions
 
-**Compare**
+** compare **
 
 ```c++
 void compare()
@@ -49,7 +49,7 @@ void compare()
 }
 ```
 
-**LCDdisplay**
+** LCDdisplay **
 
 ```c++
 void LCDdisplay()

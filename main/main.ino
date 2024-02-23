@@ -6,6 +6,7 @@
 #define power 0x01FE48B7
 #define volumeinc 0x01FE609F
 #define volumedec 0x01FEA05F
+
 LCD lcd;  
 long keycode = 0;   
 int timervalue;
@@ -18,6 +19,7 @@ float c3 =  0.000000085663516;
 double logR2, R2, T, Tc; 
 int pulse, roomtemp, roomtemp2, press; 
 int dummyvar, ACtemperature;  
+
 int main (void)
 {
   lcd.init();   
